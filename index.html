@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор стоимости заказа</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="my.js" defer></script>
+</head>
+<body>
+  <main class="calculator">
+    <p class="eyebrow">Практическая работа 5</p>
+    <h1>Калькулятор заказа</h1>
+    <p class="intro">Выберите товар и укажите количество, чтобы рассчитать стоимость.</p>
+    <form id="order-form" novalidate>
+      <label class="field" for="product">Товар</label>
+      <select id="product" name="product" required>
+        <option value="100">Блокнот — 100 ₽</option>
+        <option value="250">Настольная лампа — 250 ₽</option>
+        <option value="400">Рюкзак — 400 ₽</option>
+      </select>
+
+      <label class="field" for="quantity">Количество</label>
+      <input id="quantity" name="quantity" type="text" inputmode="numeric" autocomplete="off" placeholder="Например, 2" aria-describedby="quantity-error" required>
+      <p class="error" id="quantity-error" role="alert" hidden>Введите целое положительное число без пробелов и других символов.</p>
+
+      <button type="submit">Рассчитать стоимость</button>
+    </form>
+    <output class="result" id="result" aria-live="polite">Стоимость появится здесь.</output>
+  </main>
+</body>
+</html>
